@@ -31,6 +31,6 @@ class CarsController < ApplicationController
   def destroy 
     @car = Car.find_by(id: params[:id])
     @car.destroy
-    p "The item was deleted"
-    render template: "cars/show"
+    render json: { message: "The item was deleted" }
+  end
 end
